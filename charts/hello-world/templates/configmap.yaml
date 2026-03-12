@@ -6,8 +6,4 @@ metadata:
     {{- include "hello-world.labels" . | nindent 4 }}
 data:
   index.html: |
-    <!DOCTYPE html>
-    <html>
-      <head><title>Hello World</title></head>
-      <body><h1>Hello World -babdor not on stage but asdfasdfasdf video</h1></body>
-    </html>
+    {{- .Files.Get "index.html" | nindent 4 }}
