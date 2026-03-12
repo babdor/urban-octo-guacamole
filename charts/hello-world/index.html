@@ -2,152 +2,151 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>NETRUNNER // HELLO WORLD</title>
+    <title>hello, world</title>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
       * { margin: 0; padding: 0; box-sizing: border-box; }
 
-      body {
-        background-color: #0a0a0f;
-        color: #00ffe5;
-        font-family: 'Share Tech Mono', monospace;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem;
-        overflow-x: hidden;
+      html, body {
+        height: 100%;
+        background: #080c08;
+        color: #33ff33;
+        font-family: 'VT323', monospace;
+        font-size: 1.15rem;
+        line-height: 1.7;
       }
 
-      body::before {
+      /* phosphor flicker */
+      body::after {
         content: '';
         position: fixed;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
+        inset: 0;
         background: repeating-linear-gradient(
-          0deg,
-          transparent,
-          transparent 2px,
-          rgba(0, 255, 229, 0.03) 2px,
-          rgba(0, 255, 229, 0.03) 4px
+          to bottom,
+          transparent 0px,
+          transparent 3px,
+          rgba(0, 0, 0, 0.18) 3px,
+          rgba(0, 0, 0, 0.18) 4px
         );
         pointer-events: none;
-        z-index: 1;
+        z-index: 99;
       }
 
-      .container {
-        max-width: 860px;
-        width: 100%;
-        border: 1px solid #00ffe5;
-        padding: 2.5rem;
-        position: relative;
-        z-index: 2;
-        box-shadow: 0 0 30px rgba(0, 255, 229, 0.15), inset 0 0 30px rgba(0, 255, 229, 0.05);
+      main {
+        max-width: 72ch;
+        margin: 4rem auto;
+        padding: 0 1.5rem;
       }
 
-      .container::before {
-        content: '[ SYS://HELLO_WORLD v2.0.77 ]';
-        position: absolute;
-        top: -0.75rem;
-        left: 1.5rem;
-        background: #0a0a0f;
-        padding: 0 0.5rem;
-        font-size: 0.75rem;
-        color: #ff2d78;
-        letter-spacing: 0.1em;
+      pre.banner {
+        color: #1f8c1f;
+        font-size: 0.85rem;
+        margin-bottom: 2.5rem;
+        white-space: pre;
+        line-height: 1.2;
       }
 
       h1 {
-        font-size: 2.5rem;
-        color: #ff2d78;
-        text-shadow: 0 0 10px #ff2d78, 0 0 40px rgba(255, 45, 120, 0.4);
-        letter-spacing: 0.15em;
-        margin-bottom: 0.25rem;
-        text-transform: uppercase;
+        font-size: 2rem;
+        font-weight: normal;
+        letter-spacing: 0.05em;
+        color: #33ff33;
+        text-shadow: 0 0 8px rgba(51, 255, 51, 0.6);
+        margin-bottom: 0.2rem;
       }
 
-      .subtitle {
-        font-size: 0.85rem;
-        color: #7a7a9a;
-        letter-spacing: 0.2em;
+      .meta {
+        font-size: 0.9rem;
+        color: #1f8c1f;
         margin-bottom: 2rem;
-        text-transform: uppercase;
+        letter-spacing: 0.05em;
       }
 
-      .divider {
+      hr {
         border: none;
-        border-top: 1px solid rgba(0, 255, 229, 0.3);
-        margin: 1.5rem 0;
+        border-top: 1px solid #1a4d1a;
+        margin: 1.75rem 0;
       }
 
       p {
-        color: #a0a0c0;
-        line-height: 1.8;
+        color: #28cc28;
         margin-bottom: 1.25rem;
-        font-size: 0.95rem;
+        text-shadow: 0 0 2px rgba(51, 255, 51, 0.2);
       }
 
-      p span.highlight {
-        color: #00ffe5;
-        text-shadow: 0 0 6px rgba(0, 255, 229, 0.5);
+      p em {
+        color: #33ff33;
+        font-style: normal;
+        text-shadow: 0 0 6px rgba(51, 255, 51, 0.5);
       }
 
-      .tag {
+      .prompt {
+        color: #1f8c1f;
+        font-size: 0.9rem;
+        margin-top: 2.5rem;
+      }
+
+      .cursor {
         display: inline-block;
-        background: rgba(255, 45, 120, 0.1);
-        border: 1px solid #ff2d78;
-        color: #ff2d78;
-        font-size: 0.7rem;
-        padding: 0.1rem 0.5rem;
-        letter-spacing: 0.1em;
-        margin-right: 0.5rem;
-        text-transform: uppercase;
+        width: 0.55em;
+        height: 1.1em;
+        background: #33ff33;
+        vertical-align: text-bottom;
+        animation: blink 1.1s step-end infinite;
       }
 
-      .footer {
-        margin-top: 2rem;
-        font-size: 0.7rem;
-        color: #3a3a5a;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
+      @keyframes blink {
+        50% { opacity: 0; }
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <h1>Hello, World</h1>
-      <div class="subtitle">// Neural uplink established &mdash; night city grid &mdash; 2077</div>
+    <main>
+      <pre class="banner">
+  ___  ____  ____  ____  __    ____     _    _  _  __  ____  __    ____
+ / __)(  _ \(_  _)(  _ \(  )  (_  _)   \ \/\/ /( )(  )(  _ \(  )  (  _ \
+( (_ \ )   / _)(_  )(_) )) (_  _)(_     )    (  )(__)  )   / )(__   )(_) )
+ \___/(_)\_)(____)(____/(____)(____) __/_/\/\_\(____/ (_)\_)(____) (____/
+      </pre>
 
-      <span class="tag">CORP</span>
-      <span class="tag">NETRUNNER</span>
-      <span class="tag">GHOST</span>
+      <h1>hello, world</h1>
+      <div class="meta">// ICEBREAKER v0.1 — flatline state nominal — zion uplink active</div>
 
-      <hr class="divider" />
+      <hr />
 
       <p>
-        <span class="highlight">Lorem ipsum dolor sit amet</span>, consectetur adipiscing elit. Quisque vehicula
-        augue in nunc cursus, vel gravida enim sodales. Praesent vel est velit. Mauris at enim vitae
-        libero facilisis venenatis vitae in arcu.
+        <em>Lorem ipsum dolor sit amet</em>, consectetur adipiscing elit. The sky above the port was
+        the color of television, tuned to a dead channel. Quisque vehicula augue in nunc cursus,
+        vel gravida enim sodales — ice thin as membrane, patient as the void.
       </p>
 
       <p>
-        Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-        totam rem aperiam eaque ipsa, quae ab illo <span class="highlight">inventore veritatis</span> et
-        quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas
-        sit, aspernatur aut odit aut fugit.
+        Sed ut perspiciatis, unde omnis iste natus error sit voluptatem. He'd operated on an almost
+        permanent adrenaline high, a byproduct of youth and proficiency — totam rem aperiam eaque
+        ipsa, quae ab illo <em>inventore veritatis</em>. The matrix has its roots in primitive arcade
+        games, in early graphics programs.
+      </p>
+
+      <p>
+        Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia
+        consequuntur magni dolores. <em>Cyberspace. A consensual hallucination</em> experienced daily
+        by billions — a graphic representation of data abstracted from the banks of every computer
+        in the human system.
       </p>
 
       <p>
         At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium
-        voluptatum deleniti atque corrupti, quos dolores et quas <span class="highlight">molestias
-        excepturi</span> sint, obcaecati cupiditate non provident.
+        voluptatum deleniti atque corrupti. The Tessier-Ashpool ice shone in the center of the matrix
+        like a <em>candle flame in a sea of black glass</em>. Unthinkable complexity. Lines of light
+        ranged in the nonspace of the mind.
       </p>
 
-      <hr class="divider" />
+      <hr />
 
-      <div class="footer">&copy; 2077 Arasaka MegaCorp &mdash; All neural rights reserved &mdash; uptime: 99.97%</div>
-    </div>
+      <div class="prompt">
+        wintermute@zion:~$ <span class="cursor"></span>
+      </div>
+    </main>
   </body>
 </html>
