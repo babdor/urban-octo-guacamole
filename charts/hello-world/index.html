@@ -1,5 +1,153 @@
 <!DOCTYPE html>
-<html>
-  <head><title>Hello World</title></head>
-  <body><h1>Hello World -babdor not on stage but asdfasdfasdf video</h1></body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>NETRUNNER // HELLO WORLD</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+
+      body {
+        background-color: #0a0a0f;
+        color: #00ffe5;
+        font-family: 'Share Tech Mono', monospace;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        overflow-x: hidden;
+      }
+
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 2px,
+          rgba(0, 255, 229, 0.03) 2px,
+          rgba(0, 255, 229, 0.03) 4px
+        );
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .container {
+        max-width: 860px;
+        width: 100%;
+        border: 1px solid #00ffe5;
+        padding: 2.5rem;
+        position: relative;
+        z-index: 2;
+        box-shadow: 0 0 30px rgba(0, 255, 229, 0.15), inset 0 0 30px rgba(0, 255, 229, 0.05);
+      }
+
+      .container::before {
+        content: '[ SYS://HELLO_WORLD v2.0.77 ]';
+        position: absolute;
+        top: -0.75rem;
+        left: 1.5rem;
+        background: #0a0a0f;
+        padding: 0 0.5rem;
+        font-size: 0.75rem;
+        color: #ff2d78;
+        letter-spacing: 0.1em;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        color: #ff2d78;
+        text-shadow: 0 0 10px #ff2d78, 0 0 40px rgba(255, 45, 120, 0.4);
+        letter-spacing: 0.15em;
+        margin-bottom: 0.25rem;
+        text-transform: uppercase;
+      }
+
+      .subtitle {
+        font-size: 0.85rem;
+        color: #7a7a9a;
+        letter-spacing: 0.2em;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+      }
+
+      .divider {
+        border: none;
+        border-top: 1px solid rgba(0, 255, 229, 0.3);
+        margin: 1.5rem 0;
+      }
+
+      p {
+        color: #a0a0c0;
+        line-height: 1.8;
+        margin-bottom: 1.25rem;
+        font-size: 0.95rem;
+      }
+
+      p span.highlight {
+        color: #00ffe5;
+        text-shadow: 0 0 6px rgba(0, 255, 229, 0.5);
+      }
+
+      .tag {
+        display: inline-block;
+        background: rgba(255, 45, 120, 0.1);
+        border: 1px solid #ff2d78;
+        color: #ff2d78;
+        font-size: 0.7rem;
+        padding: 0.1rem 0.5rem;
+        letter-spacing: 0.1em;
+        margin-right: 0.5rem;
+        text-transform: uppercase;
+      }
+
+      .footer {
+        margin-top: 2rem;
+        font-size: 0.7rem;
+        color: #3a3a5a;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Hello, World</h1>
+      <div class="subtitle">// Neural uplink established &mdash; night city grid &mdash; 2077</div>
+
+      <span class="tag">CORP</span>
+      <span class="tag">NETRUNNER</span>
+      <span class="tag">GHOST</span>
+
+      <hr class="divider" />
+
+      <p>
+        <span class="highlight">Lorem ipsum dolor sit amet</span>, consectetur adipiscing elit. Quisque vehicula
+        augue in nunc cursus, vel gravida enim sodales. Praesent vel est velit. Mauris at enim vitae
+        libero facilisis venenatis vitae in arcu.
+      </p>
+
+      <p>
+        Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+        totam rem aperiam eaque ipsa, quae ab illo <span class="highlight">inventore veritatis</span> et
+        quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas
+        sit, aspernatur aut odit aut fugit.
+      </p>
+
+      <p>
+        At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium
+        voluptatum deleniti atque corrupti, quos dolores et quas <span class="highlight">molestias
+        excepturi</span> sint, obcaecati cupiditate non provident.
+      </p>
+
+      <hr class="divider" />
+
+      <div class="footer">&copy; 2077 Arasaka MegaCorp &mdash; All neural rights reserved &mdash; uptime: 99.97%</div>
+    </div>
+  </body>
 </html>
